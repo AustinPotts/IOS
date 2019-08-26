@@ -11,6 +11,7 @@
 		4509498F231453A4001C77C2 /* StylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509498E231453A4001C77C2 /* StylistCollectionViewCell.swift */; };
 		4509499123145466001C77C2 /* SelectedStylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509499023145466001C77C2 /* SelectedStylistCollectionViewController.swift */; };
 		4509499323145555001C77C2 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509499223145555001C77C2 /* MyProfileViewController.swift */; };
+		4509499723146C85001C77C2 /* MyProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509499623146C85001C77C2 /* MyProfileTableViewCell.swift */; };
 		F56850482314269F00ADAD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56850472314269F00ADAD30 /* AppDelegate.swift */; };
 		F568504D2314269F00ADAD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F568504B2314269F00ADAD30 /* Main.storyboard */; };
 		F56850502314269F00ADAD30 /* HairCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F568504E2314269F00ADAD30 /* HairCare.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 		4509498E231453A4001C77C2 /* StylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylistCollectionViewCell.swift; sourceTree = "<group>"; };
 		4509499023145466001C77C2 /* SelectedStylistCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedStylistCollectionViewController.swift; sourceTree = "<group>"; };
 		4509499223145555001C77C2 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		4509499623146C85001C77C2 /* MyProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F56850442314269F00ADAD30 /* HairCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HairCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56850472314269F00ADAD30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F568504C2314269F00ADAD30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				4509498E231453A4001C77C2 /* StylistCollectionViewCell.swift */,
+				4509499623146C85001C77C2 /* MyProfileTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				F568505E231427F900ADAD30 /* HairCareNetworkClient.swift in Sources */,
 				F568506E23144DC200ADAD30 /* LoginRequest.swift in Sources */,
 				F568507023144DDD00ADAD30 /* RegisterRequest.swift in Sources */,
+				4509499723146C85001C77C2 /* MyProfileTableViewCell.swift in Sources */,
 				F56850482314269F00ADAD30 /* AppDelegate.swift in Sources */,
 				4509498F231453A4001C77C2 /* StylistCollectionViewCell.swift in Sources */,
 			);
@@ -369,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FP8VA6LL76;
 				INFOPLIST_FILE = HairCare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FP8VA6LL76;
 				INFOPLIST_FILE = HairCare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

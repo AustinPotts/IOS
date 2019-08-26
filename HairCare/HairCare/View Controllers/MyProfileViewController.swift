@@ -16,6 +16,16 @@ class MyProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyProfileCell", for: indexPath) as? MyProfileTableViewCell else{return UITableViewCell()}
+        
+     
+        
+        return cell
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wKa-ra-QXh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zt3-KZ-8Gz">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -76,17 +76,11 @@
                             <outlet property="delegate" destination="OAB-EB-sp5" id="L4P-BH-Yds"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Stylist Profiles" id="O68-tg-ex8">
-                        <barButtonItem key="rightBarButtonItem" title="View My Profile" id="fV2-jf-qej">
-                            <connections>
-                                <segue destination="kHB-gF-0ed" kind="show" identifier="MyProfileSegue" id="F3T-IS-wK5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Stylist Profiles" id="O68-tg-ex8"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sP-V0-o4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388.4057971014495" y="140.625"/>
+            <point key="canvasLocation" x="2298.5507246376815" y="140.625"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="079-b3-NiY">
@@ -95,14 +89,84 @@
                     <view key="view" contentMode="scaleToFill" id="JV0-KU-B04">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PjH-YV-tzW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyProfileCell" rowHeight="111" id="eXh-es-cSg" customClass="MyProfileTableViewCell" customModule="HairCare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="111"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eXh-es-cSg" id="dKi-Ht-XMb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="0T4-yW-hsT">
+                                                    <rect key="frame" x="20" y="9" width="115" height="93"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mD-fB-esd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="85.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtp-0b-kSY">
+                                                            <rect key="frame" x="0.0" y="72.5" width="115" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="9mD-fB-esd" firstAttribute="leading" secondItem="mtp-0b-kSY" secondAttribute="leading" id="mpi-Ty-e1k"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-O0-Wtt">
+                                                    <rect key="frame" x="284.5" y="10.5" width="129.5" height="90"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35L-BH-Mqr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-uG-bQ6">
+                                                            <rect key="frame" x="0.0" y="69.5" width="129.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="35L-BH-Mqr" firstAttribute="leading" secondItem="uu7-uG-bQ6" secondAttribute="leading" id="8Wx-0B-YNI"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0T4-yW-hsT" firstAttribute="leading" secondItem="dKi-Ht-XMb" secondAttribute="leadingMargin" id="MnT-Tl-iIZ"/>
+                                                <constraint firstItem="X0t-O0-Wtt" firstAttribute="centerY" secondItem="dKi-Ht-XMb" secondAttribute="centerY" id="cFi-e3-XzG"/>
+                                                <constraint firstAttribute="trailing" secondItem="X0t-O0-Wtt" secondAttribute="trailing" id="dkD-yl-SdR"/>
+                                                <constraint firstItem="0T4-yW-hsT" firstAttribute="centerY" secondItem="dKi-Ht-XMb" secondAttribute="centerY" id="pxY-Vx-rRB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84402760152284262" green="0.84402760152284262" blue="0.84402760152284262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PjH-YV-tzW" firstAttribute="leading" secondItem="7qw-Zf-zpR" secondAttribute="leading" id="Ng5-es-9mK"/>
+                            <constraint firstItem="PjH-YV-tzW" firstAttribute="trailing" secondItem="7qw-Zf-zpR" secondAttribute="trailing" id="OSP-I0-k6I"/>
+                            <constraint firstItem="PjH-YV-tzW" firstAttribute="top" secondItem="7qw-Zf-zpR" secondAttribute="top" id="upg-cg-Dr6"/>
+                            <constraint firstItem="7qw-Zf-zpR" firstAttribute="bottom" secondItem="PjH-YV-tzW" secondAttribute="bottom" id="vtA-Bh-Sp7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7qw-Zf-zpR"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="Dcf-sD-fXP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe9-e7-XQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2501" y="141"/>
+            <point key="canvasLocation" x="2299" y="-648"/>
         </scene>
         <!--Select Stylist-->
         <scene sceneID="LKh-Oe-492">
@@ -171,12 +235,13 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdP-oz-cLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2455" y="-627"/>
+            <point key="canvasLocation" x="3286" y="-222"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Stylist Profiles-->
         <scene sceneID="J8f-j3-Yc7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wKa-ra-QXh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stylist Profiles" image="woman-man-7" id="ahf-zM-ClL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xAg-r9-t0C">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -189,7 +254,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7Q-LE-IHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478.26086956521743" y="140.625"/>
+            <point key="canvasLocation" x="1388.4057971014495" y="140.625"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hc1-eu-5W7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zt3-KZ-8Gz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IWu-lt-gbA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wKa-ra-QXh" kind="relationship" relationship="viewControllers" id="Ek6-VD-s9m"/>
+                        <segue destination="CzD-a9-qai" kind="relationship" relationship="viewControllers" id="nSH-CD-vKE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJs-37-Ikq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="-299"/>
+        </scene>
+        <!--My Profile-->
+        <scene sceneID="5V8-1I-Nca">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CzD-a9-qai" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Profile" image="circle-user-7" id="Dqi-4x-5te"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MsC-e7-SrC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kHB-gF-0ed" kind="relationship" relationship="rootViewController" id="l2H-ry-tEN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dU-BI-7Z5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="-648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle-user-7" width="30" height="30"/>
+        <image name="woman-man-7" width="29" height="30"/>
+    </resources>
 </document>
