@@ -10,6 +10,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var distanceSlider: UISlider!
+    @IBOutlet weak var priceSlider: UISlider!
+    @IBOutlet weak var ratingSwitch: UISwitch!
+    
+    @IBOutlet weak var saveButtonTapped: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

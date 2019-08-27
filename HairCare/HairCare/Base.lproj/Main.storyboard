@@ -87,7 +87,7 @@
         <!--Login-->
         <scene sceneID="079-b3-NiY">
             <objects>
-                <viewController id="kHB-gF-0ed" customClass="MyProfileViewController" customModule="HairCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kHB-gF-0ed" customClass="LogInViewController" customModule="HairCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JV0-KU-B04">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,6 +118,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
+                                            <action selector="logInTapped:" destination="kHB-gF-0ed" eventType="touchUpInside" id="QVB-Bg-SpF"/>
                                             <segue destination="u9x-eX-K1o" kind="show" identifier="MyProfileSegue" id="Upk-lh-xyC"/>
                                         </connections>
                                     </button>
@@ -128,6 +129,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Profile"/>
                                 <connections>
+                                    <action selector="createProfileTapped:" destination="kHB-gF-0ed" eventType="touchUpInside" id="Aso-8l-GdC"/>
                                     <segue destination="1wO-97-gbG" kind="presentation" identifier="CreateProfileSegue" id="QcM-VG-pZa"/>
                                 </connections>
                             </button>
@@ -143,6 +145,10 @@
                     <navigationItem key="navigationItem" title="Login" id="Dcf-sD-fXP">
                         <barButtonItem key="rightBarButtonItem" id="ecZ-90-qL2"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="eOo-DR-jJE" id="tBh-hw-2GN"/>
+                        <outlet property="usernameTextField" destination="bZ0-af-rwk" id="lsu-9S-W0m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe9-e7-XQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,8 +172,16 @@
                                 <rect key="frame" x="0.0" y="800" width="414" height="96"/>
                                 <items>
                                     <navigationItem id="9yy-tf-rG5">
-                                        <barButtonItem key="leftBarButtonItem" title="Done" id="MNs-hz-NEy"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="S1P-fJ-hWn"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Done" id="MNs-hz-NEy">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="1wO-97-gbG" id="z5c-GL-ojj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="S1P-fJ-hWn">
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="1wO-97-gbG" id="C5J-Gy-bhL"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -221,6 +235,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uhG-5g-xPw"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Jw5-bp-SYe" id="b0m-lt-fxj"/>
+                        <outlet property="nameTextField" destination="ecF-20-CyW" id="TPj-aM-j9A"/>
+                        <outlet property="passwordTextField" destination="dmt-b8-cgG" id="eyr-XW-QgP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsV-BN-HmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,7 +347,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gm3-K4-ffe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Profile" id="MCG-M1-IO2"/>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="MCG-M1-IO2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="doq-su-o0u">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="7jB-rC-2Hf" id="l8r-vd-Ulr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="reg-Uw-04i" id="e8x-1c-PS2"/>
+                        <outlet property="fNameTextField" destination="DJD-aR-Lmc" id="HRN-RR-TMD"/>
+                        <outlet property="lNameTextField" destination="DsZ-tZ-lNs" id="cyw-J6-hTk"/>
+                        <outlet property="locationTextField" destination="9HU-Cp-7Bx" id="2YE-TN-SDJ"/>
+                        <outlet property="passwordTextField" destination="IGn-6f-Hc1" id="jIP-O7-hME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XV-ah-LLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,7 +381,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Sn7-7Y-9sd">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectedStylistCell" id="Sn7-7Y-9sd">
                                 <rect key="frame" x="10" y="10" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -425,7 +457,7 @@
         <!--Settings-->
         <scene sceneID="gxY-MK-fSu">
             <objects>
-                <viewController id="4GL-3l-Tpl" sceneMemberID="viewController">
+                <viewController id="4GL-3l-Tpl" customClass="SettingsViewController" customModule="HairCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oEY-yN-Zs1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -440,7 +472,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YsT-WJ-6Id">
-                                        <rect key="frame" x="98" y="89" width="138" height="31"/>
+                                        <rect key="frame" x="92" y="89" width="150" height="31"/>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-iN-JQ9">
                                         <rect key="frame" x="140" y="178" width="54.5" height="30"/>
@@ -449,7 +481,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BAW-G5-cZE">
-                                        <rect key="frame" x="98" y="267" width="138" height="31"/>
+                                        <rect key="frame" x="92" y="267" width="150" height="31"/>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENn-m9-44d">
                                         <rect key="frame" x="90.5" y="356" width="153" height="30"/>
@@ -471,7 +503,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nrj-EL-EXW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="QsS-ma-jbH"/>
+                    <navigationItem key="navigationItem" title="Settings" id="QsS-ma-jbH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cdR-52-zrv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="distanceSlider" destination="YsT-WJ-6Id" id="LEv-Tt-e6m"/>
+                        <outlet property="priceSlider" destination="BAW-G5-cZE" id="mIe-kg-GFq"/>
+                        <outlet property="ratingSwitch" destination="QQZ-um-Zto" id="PGV-1A-CXP"/>
+                        <outlet property="saveButtonTapped" destination="cdR-52-zrv" id="YBZ-g6-OdD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHX-Rf-o9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

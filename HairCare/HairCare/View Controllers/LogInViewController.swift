@@ -10,6 +10,18 @@ import UIKit
 
 class LogInViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    @IBAction func logInTapped(_ sender: Any) {
+    }
+    
+    @IBAction func createProfileTapped(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

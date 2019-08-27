@@ -10,6 +10,16 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+    @IBOutlet weak var fNameTextField: UITextField!
+    @IBOutlet weak var lNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
