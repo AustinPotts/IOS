@@ -10,4 +10,20 @@ import UIKit
 
 class StylistCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var stylistImageView: UIImageView!
+    @IBOutlet weak var stylistNameLabel: UILabel!
+    
+    var hairStylist: HairStylist? {
+        didSet{
+            updateViews()
+        }
+    }
+    
+    private func updateViews(){
+        guard let hairStylist = hairStylist else {return}
+        stylistImageView.image = hairStylist.image
+        stylistNameLabel.text = hairStylist.name
+        
+    }
+    
 }

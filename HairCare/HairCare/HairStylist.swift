@@ -7,8 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
-struct HairStylist: Codable {
+class HairStylist {
+    
+    
 	var name: String
 	var yearsOfExperience: Int
+    var image: UIImage
+    
+    init(name: String, yearsOfExperience: Int, imageName: String) {
+        self.image = UIImage(named: imageName)!
+        self.name = name
+        self.yearsOfExperience = yearsOfExperience
+    }
 }

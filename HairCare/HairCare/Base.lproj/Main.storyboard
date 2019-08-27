@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RrJ-Cs-V4k" customClass="StylistCollectionViewCell" customModule="HairCare" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StylistCell" id="RrJ-Cs-V4k" customClass="StylistCollectionViewCell" customModule="HairCare" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -67,6 +67,8 @@
                                     <constraint firstAttribute="trailing" secondItem="yuQ-Au-LNc" secondAttribute="trailing" id="sxk-9m-zeh"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="stylistImageView" destination="kQE-8S-19g" id="OD1-Lv-fpS"/>
+                                    <outlet property="stylistNameLabel" destination="emX-Eo-9db" id="ymH-fF-DNc"/>
                                     <segue destination="6xH-VN-IKN" kind="show" identifier="SelectStylistSegue" id="eFa-5T-3O8"/>
                                 </connections>
                             </collectionViewCell>

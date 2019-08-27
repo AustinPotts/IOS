@@ -11,6 +11,9 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class StylistCollectionViewController: UICollectionViewController {
+    
+    
+    let stylistController = StylistController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +41,21 @@ class StylistCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return stylistController.stylist.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StylistCell", for: indexPath) as? StylistCollectionViewCell else {return UICollectionViewCell()}
     
         // Configure the cell
-    
+        let stylist = stylistController.stylist[indexPath.item]
+        cell.hairStylist = stylist
         return cell
     }
 
