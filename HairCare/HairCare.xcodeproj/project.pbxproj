@@ -92,6 +92,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		450949A42316CBEF001C77C2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F568504B2314269F00ADAD30 /* Main.storyboard */,
+				F5685053231426A000ADAD30 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		450949A52316CC25001C77C2 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				450949A023159A9C001C77C2 /* StylistController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		F568503B2314269F00ADAD30 = {
 			isa = PBXGroup;
 			children = (
@@ -111,18 +128,17 @@
 		F56850462314269F00ADAD30 /* HairCare */ = {
 			isa = PBXGroup;
 			children = (
+				450949A52316CC25001C77C2 /* Model Controllers */,
 				45094995231455C5001C77C2 /* Views */,
 				45094994231455A8001C77C2 /* View Controllers */,
 				F568506623144B8E00ADAD30 /* Helpers */,
 				F5685065231435A500ADAD30 /* Models */,
 				F568505C231427D800ADAD30 /* Networking */,
 				F56850472314269F00ADAD30 /* AppDelegate.swift */,
-				F568504B2314269F00ADAD30 /* Main.storyboard */,
+				450949A42316CBEF001C77C2 /* Storyboards */,
 				F5685051231426A000ADAD30 /* Assets.xcassets */,
 				F568504E2314269F00ADAD30 /* HairCare.xcdatamodeld */,
-				F5685053231426A000ADAD30 /* LaunchScreen.storyboard */,
 				F5685056231426A000ADAD30 /* Info.plist */,
-				450949A023159A9C001C77C2 /* StylistController.swift */,
 			);
 			path = HairCare;
 			sourceTree = "<group>";
