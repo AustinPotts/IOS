@@ -11,20 +11,34 @@ import UIKit
 class SelectStylistViewController: UIViewController {
     
     @IBOutlet weak var selectStylistImageView: UIImageView!
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
+    @IBAction func scheduleStylistTapped(_ sender: Any) {
+        
+    }
+    
+    
+    
     var stylist: HairStylist?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       //updateViews()
+       updateViews()
     }
     
-//    func updateViews() {
-//        if let selStylist = stylist {
-//            image = selStylist.image
-//        }
-//    }
+   func updateViews() {
+      if let stylist = stylist {
+           selectStylistImageView.image = stylist.image
+       }
+   }
+    
+    
     /*
     // MARK: - Navigation
 

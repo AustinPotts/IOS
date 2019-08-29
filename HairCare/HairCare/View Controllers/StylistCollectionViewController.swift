@@ -57,16 +57,16 @@ class StylistCollectionViewController: UICollectionViewController {
     }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SelectStylistSegue" {
-//            guard let indexPath = collectionView.indexPathsForSelectedItems,
-//                let stylistSelectVC = segue.destination as? SelectStylistViewController else{return}
-//
-//            let selectedStylist = stylist[indexPath.item]
-//            stylistSelectVC.stylist = selectedStylist
-//
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelectStylistSegue" {
+            guard let indexPath = collectionView.indexPathsForSelectedItems?.first?.item,
+                let stylistSelectVC = segue.destination as? SelectStylistViewController else{return}
+
+            let selectedStylist = stylistController.stylist[indexPath]
+            stylistSelectVC.stylist = selectedStylist
+
+        }
+    }
     
     // MARK: UICollectionViewDelegate
     
