@@ -10,11 +10,22 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var distanceSlider: UISlider!
-    @IBOutlet weak var priceSlider: UISlider!
-    @IBOutlet weak var ratingSwitch: UISwitch!
     
-    @IBOutlet weak var saveButtonTapped: UIBarButtonItem!
+    
+    @IBAction func switchOneTapped(_ sender: Any) {
+    }
+    
+    @IBAction func switchTwoTapped(_ sender: Any) {
+    }
+    
+    @IBAction func switchTapped(_ sender: Any) {
+        
+    }
+    
+   
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

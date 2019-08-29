@@ -12,11 +12,13 @@ private let reuseIdentifier = "Cell"
 
 class StylistCollectionViewController: UICollectionViewController {
     
+
     
     let stylistController = StylistController()
     
-
-    
+    @IBAction func unwindToSelectStylist(_ sender: UIStoryboardSegue) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

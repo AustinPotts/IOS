@@ -13,12 +13,14 @@ class HairStylist {
     
     
 	var name: String
-	var yearsOfExperience: Int
+	var yearsOfExperience: String
     var image: UIImage
+    var location: String
     
-    init(name: String, yearsOfExperience: Int, imageName: String) {
+    init(name: String, yearsOfExperience: String, imageName: String, location: String) {
         self.image = UIImage(named: imageName)!
         self.name = name
         self.yearsOfExperience = yearsOfExperience
+        self.location = location
     }
 }

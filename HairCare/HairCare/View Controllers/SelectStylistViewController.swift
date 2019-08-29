@@ -18,10 +18,15 @@ class SelectStylistViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     @IBAction func scheduleStylistTapped(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+         showAlert()
         
     }
     
     
+    @IBAction func leaveReviewTapped(_ sender: Any) {
+        showReviewAlert()
+    }
     
     var stylist: HairStylist?
     
@@ -35,9 +40,24 @@ class SelectStylistViewController: UIViewController {
    func updateViews() {
       if let stylist = stylist {
            selectStylistImageView.image = stylist.image
+            nameLabel.text = stylist.name
+            locationLabel.text = stylist.location
+            ratingLabel.text = stylist.yearsOfExperience
+            
        }
    }
     
+    private func showAlert(){
+        let alert = UIAlertController(title: "Your Appointment has been scheduled", message: "Thank you! Your schedule date will be emailed to you", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showReviewAlert(){
+        let reviewAlert = UIAlertController(title: "WARNING!", message: "You cannot leave a review without signing in.", preferredStyle: .alert)
+        reviewAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        present(reviewAlert, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
